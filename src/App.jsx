@@ -36,8 +36,12 @@ function App() {
 
   const [bgState, setBg] = useState(bg);
 
-  return (
+  const handlBg = (bg) => {
+    setBg(bg);
+  }
 
+
+  return (
 
     // <img src={bg} alt="" />
     <ContextProviderNode>
@@ -54,7 +58,7 @@ function App() {
 
 
           <Routes>
-            <Route path="/" element={<Prompt setbg={setBg}/>}/>
+            <Route path="/" element={<Prompt setbg={handlBg}/>}/>
             <Route path="/game" element={<Game replica={true} type='question'/>}/>
             <Route path="/answer" element={<Game replica={false} type='text'/>}/>
             <Route path="/res_rep_correct" element={<Game replica={true} type='result' correct={true}/>}/>

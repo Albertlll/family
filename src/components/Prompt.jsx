@@ -101,15 +101,10 @@ function Prompt(props) {
 
         });
         props.setBg(response.image);
+        
         localStorage.setItem("node",  JSON.stringify(response.node))
         localStorage.setItem("story",  JSON.stringify(response.story))
 
-
-        
-        // setQuest(response.data.story);
-
-        // localStorage.setItem("node", JSON.stringify({'image': '', 'character_name': 'Петя', 'question': 'Я сдал оаип на 5 и рпм на 4. Сколько мне лет?'}));
-        
         window.location.href = 'game'
 
     }
