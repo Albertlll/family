@@ -84,26 +84,30 @@ const CreateBtn = styled.button`
     }
 
 `
-function Prompt() {
+function Prompt(props) {
 
 
-    const {quest, setQuest} = useContext(QuestContext)
+    // const {quest, setQuest} = useContext(QuestContext)
     // const {node, setNode} = useContext(NodeContext)
 
 
 
 
     const handleCreate = async () => {
-        // const response = await httpClient.post("/Storys/api/v1/Storys",
-        // {
+        const response = await httpClient.post("/api/v1/Storys",
+        {
 
-        //     'base_prompt': story
+            'base_prompt': story
 
-        // });
+        });
+        props.setBg();
+
+
         
         // setQuest(response.data.story);
 
         localStorage.setItem("node", JSON.stringify({'image': '', 'character_name': 'Петя', 'question': 'Я сдал оаип на 5 и рпм на 4. Сколько мне лет?'}));
+        
         window.location.href = 'game'
 
     }
