@@ -13,7 +13,7 @@ function StringInput() {
 
     const handleKeyPress = (event) => {
         if(event.key === 'Enter'){
-          console.log('Нажата клавиша Enter, ура!');
+                window.location.href = "res_rep_correct";
         }
       };
 

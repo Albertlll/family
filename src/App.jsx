@@ -48,8 +48,11 @@ function App() {
 
           <Routes>
             <Route path="/" element={<Prompt/>}/>
-            <Route path="/game" element={<Game replica={true}/>}/>
+            <Route path="/game" element={<Game replica={true} type='question'/>}/>
             <Route path="/answer" element={<Game replica={false} type='text'/>}/>
+            <Route path="/res_rep_correct" element={<Game replica={true} type='result' correct={true}/>}/>
+            <Route path="/res_rep_uncorrect" element={<Game replica={true} type='result' correct={false}/>}/>
+
 
           </Routes>
 

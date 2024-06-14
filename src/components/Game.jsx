@@ -34,7 +34,10 @@ function Game(props) {
 
     return (
         props.replica ?
-        <Replica onClick={() => handleContinue()} character_name={node.character_name} main_text={node.question}/>
+        <Replica onClick={() => handleContinue()} character_name={node.character_name} main_text={
+        
+            props.type == 'question' ? node.question :
+            node.correct ? node.reaction_true : node.reaction_false}/>
         :
     <GameDiv>
         <QuestionsBlock type={props.type}></QuestionsBlock>
