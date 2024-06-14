@@ -7,7 +7,7 @@ const TitleWrapper = styled.div`
     display:flex;
     padding-left:  70px;
     padding-right: 70px;
-    
+    z-index: 6;
     height: 104px;
     border-radius: 100px;
     background-color: rgba(0, 0, 0, 0.8);
@@ -22,6 +22,7 @@ const TitleH1 = styled.h1`
     font-family: Ermilov;
     font-size: 70px;
     position: relative;
+    z-index: 7
 `
 
 
