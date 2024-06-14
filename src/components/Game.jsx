@@ -22,6 +22,11 @@ function Game(props) {
     const [node, setNode] = useState({"character_name": "csdc", "question": "dscsd"})
 
     const handleContinue = () => {
+        props.type == "result" ?
+
+        window.location.href = 'variant'
+
+        :
         window.location.href = 'answer'
     }
     useEffect(() => {

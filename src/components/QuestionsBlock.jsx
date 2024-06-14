@@ -26,7 +26,7 @@ const TitleH1 = styled.h1`
 
 
 
-function Questions() {
+function Questions(props) {
     const [title, setTitle] = useState('Выберите вариант ответа');
 
     return (
@@ -41,10 +41,15 @@ function Questions() {
         </TitleWrapper>
 
 
-
+        {props.type == "text" ? 
+        
         <StringInput></StringInput>
+        :
+        <Variants variants={['a', 'v', 'd', 'c']}></Variants>
+        
+        }
 
-        {/* <Variants variants={['a', 'v', 'd', 'c']}></Variants> */}
+
     </>);
 }
 
