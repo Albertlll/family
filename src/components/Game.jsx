@@ -29,6 +29,7 @@ function Game(props) {
         :
         window.location.href = 'answer'
     }
+    
     useEffect(() => {
         (async () => {
 
