@@ -94,7 +94,7 @@ function Prompt(props) {
 
 
     const handleCreate = async () => {
-        const response = await httpClient.post("/api/v1/Storys",
+        const response = await httpClient.post("/api/v1/storys",
         {
 
             'base_prompt': story
