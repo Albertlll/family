@@ -16,7 +16,7 @@ import mask_bg from './bg/bg_mask.png'
 const AppElem = styled.div`
   width: 100%;
   height: 100%;
-  background-image: url(${bg});
+  //background-image: url(${bg});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -44,6 +44,8 @@ function App() {
 
 
         <AppElem>
+          <BgImage src={bg} alt="" />
+
           <BgImage src={mask_bg} alt="" />
 
           <Routes>
@@ -53,11 +55,7 @@ function App() {
             <Route path="/res_rep_correct" element={<Game replica={true} type='result' correct={true}/>}/>
             <Route path="/res_rep_uncorrect" element={<Game replica={true} type='result' correct={false}/>}/>
             <Route path="/variant" element={<Game replica={false} type='variant'/>}/>
-
-
           </Routes>
-
-          {/* <Game/> */}
 
         </AppElem>
 
