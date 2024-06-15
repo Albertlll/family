@@ -19,8 +19,6 @@ function StringInput() {
             
             httpClient.post("/api/v1/nodes/get-reaction/",
                 {
-                    'node_id': JSON.parse(localStorage.getItem('node')).id,
-        
                     'answer': answer,
                     'story_id': JSON.parse(localStorage.getItem('story')).story_id,
                     'id' : JSON.parse(localStorage.getItem('story')).path_id
