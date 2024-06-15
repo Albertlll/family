@@ -48,7 +48,7 @@ function Variants(props) {
         const parent_id = JSON.parse(localStorage.getItem('node')).node_id;
 
 
-        httpClient.post("/api/v1/get-node/", 
+        httpClient.post("/api/v1/nodes/get-node/", 
         {
             'parent_id': parent_id,
             'story_id': story_id,
