@@ -2,7 +2,7 @@ import styled from "styled-components";
 import PromptTextarea from "./PromptTextarea";
 import httpClient from "../httpClient";
 
-import { QuestContext } from "./QuestContext";
+import { BgContext } from "./BgContext";
 import { NodeContext } from "./NodeContext";
 
 import { useContext, useState } from "react";
@@ -87,24 +87,23 @@ const CreateBtn = styled.button`
 function Prompt(props) {
 
 
-    // const {quest, setQuest} = useContext(QuestContext)
+    const {bgState, setBg} = useContext(BgContext)
     // const {node, setNode} = useContext(NodeContext)
 
 
 
-
     const handleCreate = async () => {
-        const response = await httpClient.post("/api/v1/storys",
+        const response = await httpClient.post("/api/v1/storys/fake",
         {
 
             'base_prompt': story
 
         });
-        props.setBg(response.image);
-        
-        localStorage.setItem("node",  JSON.stringify(response.node))
+
+        localStorage.setItem("node",  JSON.stringify(response.base_node))
         localStorage.setItem("story",  JSON.stringify(response.story))
 
+        setBg(response.base_node.image);
         window.location.href = 'game'
 
     }
