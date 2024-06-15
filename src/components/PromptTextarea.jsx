@@ -32,7 +32,7 @@ function PromptTextarea(props) {
     return (
 
     <StringInputWrapper>
-        <StringInputElem placeholder={props.placeholder}/>
+        <StringInputElem onChange={props.onChange} placeholder={props.placeholder}/>
     </StringInputWrapper>
     );
 }

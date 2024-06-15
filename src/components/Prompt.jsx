@@ -85,7 +85,8 @@ const CreateBtn = styled.button`
 
 `
 function Prompt(props) {
-
+    const [story, setStory] = useState('');
+    const [users, setUsers] = useState('');
 
     const {bgState, setBg} = useContext(BgContext)
     // const {node, setNode} = useContext(NodeContext)
@@ -93,6 +94,11 @@ function Prompt(props) {
 
 
     const handleCreate = () => {
+        console.log(users);
+        console.log(story);
+
+        localStorage.setItem('players', JSON.stringify(users.split(" ")));
+
         httpClient.post("/api/v1/storys",
         {
 
@@ -108,10 +114,6 @@ function Prompt(props) {
         });
 
     }
-
-
-    const [story, setStory] = useState('');
-    const [users, setUsers] = useState('');
 
 
     return (

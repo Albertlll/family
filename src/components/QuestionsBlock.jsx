@@ -30,6 +30,13 @@ const TitleH1 = styled.h1`
 function Questions(props) {
     const [title, setTitle] = useState('Ответьте  на вопрос');
 
+
+    var users = JSON.parse(localStorage.getItem('players'));
+    var randomIndex = Math.floor(Math.random() * array.length);
+
+
+    var selected_user = users[randomIndex];
+
     return (
         // Крч пропс сюда передается какой тип вопроса
     
@@ -37,7 +44,7 @@ function Questions(props) {
 
         <TitleWrapper>
             <TitleH1>
-                {title} 
+                {selected_user + ' тебе выбирать!'} 
             </TitleH1>
         </TitleWrapper>
 
