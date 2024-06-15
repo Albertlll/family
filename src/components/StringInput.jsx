@@ -17,8 +17,9 @@ function StringInput() {
         if(event.key === 'Enter'){
             console.log("зашло в хендил ентера'")
             
-            httpClient.post("/api/v1/nodes/get-reaction?node_id=" + JSON.parse(localStorage.getItem('node')).id,
+            httpClient.post("/api/v1/nodes/get-reaction/",
                 {
+                    'node_id': JSON.parse(localStorage.getItem('node')).id,
         
                     'answer': answer,
                     'story_id': JSON.parse(localStorage.getItem('story')).story_id,
