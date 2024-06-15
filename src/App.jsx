@@ -32,7 +32,9 @@ const BgImage =styled.img`
 `
 
 function App() {
-  const {bgState, setBg} = useContext(BgContext);
+
+  const {bgState} = useContext(BgContext);
+  console.log(bgState);
   return (
 
     // <img src={bg} alt="" />

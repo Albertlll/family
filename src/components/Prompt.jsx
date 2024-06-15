@@ -100,10 +100,10 @@ function Prompt(props) {
 
         });
 
-        localStorage.setItem("node",  JSON.stringify(response.base_node))
-        localStorage.setItem("story",  JSON.stringify(response.story))
+        localStorage.setItem("node",  JSON.stringify(response.data.base_node))
+        localStorage.setItem("story",  JSON.stringify(response.data.story))
 
-        setBg(response.base_node.image);
+        setBg(response.data.base_node.image);
         window.location.href = 'game'
 
     }
