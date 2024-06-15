@@ -4,6 +4,7 @@ import Replica from "./Replica";
 import QuestionsBlock from "./QuestionsBlock";
 import { NodeContext } from "./NodeContext";
 import { useContext, useState, useEffect} from "react";
+import { BgContext } from "./BgContext";
 
 const GameDiv = styled.div`
     height: 396px;
@@ -20,6 +21,7 @@ function Game(props) {
     console.log(JSON.stringify(localStorage.getItem("node")))
 
     const [node, setNode] = useState({"character_name": "csdc", "question": "dscsd"})
+    const {bgState, setBg} = useContext(BgContext)
 
     const handleContinue = () => {
         props.type == "result" ?
@@ -34,6 +36,8 @@ function Game(props) {
         (async () => {
 
             setNode(JSON.parse(localStorage.getItem("node")))
+            setBg(localStorage.getItem("bg_image"));
+
 
         })();
       }, []);

@@ -28,7 +28,7 @@ const TitleH1 = styled.h1`
 
 
 function Questions(props) {
-    const [title, setTitle] = useState('Выберите вариант ответа');
+    const [title, setTitle] = useState('Ответьте  на вопрос');
 
     return (
         // Крч пропс сюда передается какой тип вопроса
@@ -46,7 +46,14 @@ function Questions(props) {
         
         <StringInput></StringInput>
         :
-        <Variants variants={['a', 'v', 'd', 'c']}></Variants>
+        <Variants variants={
+            [
+                JSON.parse(localStorage.getItem('node')).option_one,
+                JSON.parse(localStorage.getItem('node')).option_two,
+                JSON.parse(localStorage.getItem('node')).option_three,
+                JSON.parse(localStorage.getItem('node')).option_four
+            ]
+        }></Variants>
         
         }
 
