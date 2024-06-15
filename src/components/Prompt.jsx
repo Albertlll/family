@@ -129,7 +129,7 @@ function Prompt(props) {
                 </TextareaWrapper>
 
                 <TextareaWrapper>
-                    <PromptTextarea placeholder='Введите имзатолкаюенна участников через пробел' onChange={(e) => setUsers(e.target.value)}></PromptTextarea>
+                    <PromptTextarea placeholder='Введите имена участников через пробел' onChange={(e) => setUsers(e.target.value)}></PromptTextarea>
                 </TextareaWrapper>
 
                 <CreateBtn onClick={() => handleCreate()}> Далее</CreateBtn>

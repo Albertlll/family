@@ -14,8 +14,6 @@ function StringInput() {
 
     const handleKeyPress = (event) => {
         if(event.key === 'Enter'){
-
-            window.location.href = "res_rep_correct";
             
             httpClient.post("/api/v1/storys/" + localStorage.getItem('node').node_id,(
                 {

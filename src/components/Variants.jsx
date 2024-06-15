@@ -41,14 +41,17 @@ const VariantBtn = styled.div`
 
 
 function Variants(props) {
-    const [statetype, setStatetype] = useState({'type': 0, 'answer': 0});
 
     const handleSelect = (index) => {
-        console.log(statetype.answer);
-        if (statetype.type === 0 ){
-            setStatetype({'type': 0, 'answer': index})
-            console.log('fvdf');
-        };
+        httpClient.get("/api/v1/storys/")
+        .then(function(response) {
+
+            localStorage.setItem("node",  JSON.stringify(response.data.base_node))
+            localStorage.setItem("story",  JSON.stringify(response.data.story))
+            localStorage.setItem("bg_image", 'data:image/png;base64,' + response.data.base_node.image)
+            window.location.href = 'game'
+
+        });
     }
     
     return (
