@@ -15,7 +15,7 @@ function StringInput() {
     const handleKeyPress = (event) => {
         if(event.key === 'Enter'){
             
-            httpClient.post("/api/v1/storys/" + localStorage.getItem('node').node_id,(
+            httpClient.post("/api/v1/get-reaction/" + localStorage.getItem('node').node_id,(
                 {
         
                     'answer': answer,

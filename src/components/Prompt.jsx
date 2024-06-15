@@ -93,7 +93,7 @@ function Prompt(props) {
 
 
     const handleCreate = () => {
-        httpClient.post("/api/v1/storys/",
+        httpClient.post("/api/v1/storys",
         {
 
             'base_prompt': story
