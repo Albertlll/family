@@ -45,7 +45,7 @@ function Variants(props) {
     const handleSelect = (index) => {
 
         const story_id = JSON.parse(localStorage.getItem('story')).id;
-        const parent_id = JSON.parse(localStorage.getItem('node')).node_id;
+        const parent_id = JSON.parse(localStorage.getItem('node')).id;
 
 
         httpClient.post("/api/v1/nodes/get-node/", 
