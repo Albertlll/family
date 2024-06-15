@@ -9,7 +9,7 @@ function ContextProviderBg({children}) {
 
     const [bgState, setBg] = useState(bg);
 
-    const contextValue = useMemo(() => ({ bgState, setBg }), [bgState]);
+    const contextValue = {bgState, setBg}
   
     return (<BgContext.Provider value={contextValue}>
                 {children}
