@@ -31,7 +31,7 @@ const MainText = styled.div`
     width: 100%;
     height: 100%;
     width: calc(100% - 200px);
-    font-size: 37px;
+    font-size: 25px;
     top: 17px;
     left: 121px;
     position: absolute;`
