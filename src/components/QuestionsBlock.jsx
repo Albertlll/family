@@ -32,7 +32,7 @@ function Questions(props) {
 
 
     var users = JSON.parse(localStorage.getItem('players'));
-    var randomIndex = Math.floor(Math.random() * array.length);
+    var randomIndex = Math.floor(Math.random() * users.length);
 
 
     var selected_user = users[randomIndex];
