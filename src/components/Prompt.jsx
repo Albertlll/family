@@ -85,6 +85,7 @@ const CreateBtn = styled.button`
 
 `
 function Prompt(props) {
+
     const [story, setStory] = useState('');
     const [users, setUsers] = useState('');
 
@@ -98,6 +99,8 @@ function Prompt(props) {
         console.log(story);
 
         localStorage.setItem('players', JSON.stringify(users.split(" ")));
+        
+
 
         httpClient.post("/api/v1/storys",
         {
