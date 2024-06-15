@@ -44,11 +44,11 @@ function Variants(props) {
 
     const handleSelect = (index) => {
 
-        const story_id = JSON.parse(localStorage.getItem('story')).story_id;
+        const story_id = JSON.parse(localStorage.getItem('story')).id;
         const parent_id = JSON.parse(localStorage.getItem('node')).node_id;
 
 
-        httpClient.post("/api/v1/get-node/" + story_id + "/" + parent_id + "/" + index, 
+        httpClient.post("/api/v1/get-node/", 
         {
             'parent_id': parent_id,
             'story_id': story_id,
@@ -57,8 +57,7 @@ function Variants(props) {
         .then(function(response) {
 
             localStorage.setItem("node",  JSON.stringify(response.data.base_node))
-            localStorage.setItem("story",  JSON.stringify(response.data.story))
-            localStorage.setItem("bg_image", 'data:image/png;base64,' + response.data.base_node.image)
+            localStorage.setItem("bg_image", 'data:image/png;base64,' + response.data.node.image)
             window.location.href = 'game'
 
         });
