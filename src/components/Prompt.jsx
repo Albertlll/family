@@ -92,19 +92,22 @@ function Prompt(props) {
 
 
 
-    const handleCreate = async () => {
-        const response = await httpClient.post("/api/v1/storys/fake",
+    const handleCreate = () => {
+        httpClient.post("/api/v1/storys/fake",
         {
 
             'base_prompt': story
 
+        }).then(function(response) {
+
+
+            setBg(response.data.base_node.image);
+
+            localStorage.setItem("node",  JSON.stringify(response.data.base_node))
+            localStorage.setItem("story",  JSON.stringify(response.data.story))
+            window.location.href = 'game'
+
         });
-
-        localStorage.setItem("node",  JSON.stringify(response.data.base_node))
-        localStorage.setItem("story",  JSON.stringify(response.data.story))
-
-        setBg(response.data.base_node.image);
-        window.location.href = 'game'
 
     }
 
