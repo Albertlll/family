@@ -4,9 +4,7 @@ import viteLogo from '/vite.svg'
 import Game from './components/Game'
 import Prompt from './components/Prompt'
 import styled from 'styled-components'
-import ContextProviderQuest from './components/BgContext'
 import { BgContext } from './components/BgContext'
-import ContextProviderNode from './components/NodeContext'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import bg from './bg/bg.png'
@@ -34,12 +32,11 @@ const BgImage =styled.img`
 `
 
 function App() {
-  const {bgState, setBg} = useContext(bg);
+  const {bgState, setBg} = useContext(BgContext);
   return (
 
     // <img src={bg} alt="" />
-    <ContextProviderNode>
-      <ContextProviderQuest>
+
         <BrowserRouter>
         
 
@@ -64,8 +61,6 @@ function App() {
 
         
         </BrowserRouter>
-      </ContextProviderQuest>
-    </ContextProviderNode>
 
   )
 }
