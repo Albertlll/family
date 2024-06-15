@@ -48,7 +48,12 @@ function Variants(props) {
         const parent_id = JSON.parse(localStorage.getItem('node')).node_id;
 
 
-        httpClient.get("/api/v1/get-node/" + story_id + "/" + parent_id + "/" + index)
+        httpClient.post("/api/v1/get-node/" + story_id + "/" + parent_id + "/" + index, 
+        {
+            'parent_id': parent_id,
+            'story_id': story_id,
+            'path_id': index,
+        })
         .then(function(response) {
 
             localStorage.setItem("node",  JSON.stringify(response.data.base_node))

@@ -20,8 +20,8 @@ function StringInput() {
             httpClient.post("/api/v1/nodes/get-reaction/",
                 {
                     'answer': answer,
-                    'story_id': JSON.parse(localStorage.getItem('story')).story_id,
-                    'id' : JSON.parse(localStorage.getItem('story')).path_id
+                    'story_id': JSON.parse(localStorage.getItem('story')).id,
+                    'id' : JSON.parse(localStorage.getItem('node')).id
         
                 }).then(function(response) {
 
