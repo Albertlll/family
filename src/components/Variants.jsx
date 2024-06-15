@@ -56,8 +56,8 @@ function Variants(props) {
         })
         .then(function(response) {
 
-            localStorage.setItem("node",  JSON.stringify(response.data.base_node))
-            localStorage.setItem("bg_image", 'data:image/png;base64,' + response.data.node.image)
+            localStorage.setItem("node",  JSON.stringify(response.data))
+            localStorage.setItem("bg_image", 'data:image/png;base64,' + response.data.image)
             window.location.href = 'game'
 
         });
