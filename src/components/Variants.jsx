@@ -43,7 +43,12 @@ const VariantBtn = styled.div`
 function Variants(props) {
 
     const handleSelect = (index) => {
-        httpClient.get("/api/v1/storys/")
+
+        const story_id = JSON.parse(localStorage.getItem('story')).story_id;
+        const parent_id = JSON.parse(localStorage.getItem('node')).node_id;
+
+
+        httpClient.get("/api/v1/get-node/" + story_id + "/" + parent_id + "/" + index)
         .then(function(response) {
 
             localStorage.setItem("node",  JSON.stringify(response.data.base_node))
