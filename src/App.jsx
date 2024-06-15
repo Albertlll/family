@@ -1,10 +1,11 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import Game from './components/Game'
 import Prompt from './components/Prompt'
 import styled from 'styled-components'
 import ContextProviderQuest from './components/BgContext'
+import { BgContext } from './components/BgContext'
 import ContextProviderNode from './components/NodeContext'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -33,12 +34,7 @@ const BgImage =styled.img`
 `
 
 function App() {
-
-  const handlBg = (bg) => {
-    setBg(bg);
-  }
-
-
+  const {bgState, setBg} = useContext(bg);
   return (
 
     // <img src={bg} alt="" />
@@ -56,7 +52,7 @@ function App() {
 
 
           <Routes>
-            <Route path="/" element={<Prompt setbg={handlBg}/>}/>
+            <Route path="/" element={<Prompt/>}/>
             <Route path="/game" element={<Game replica={true} type='question'/>}/>
             <Route path="/answer" element={<Game replica={false} type='text'/>}/>
             <Route path="/res_rep_correct" element={<Game replica={true} type='result' correct={true}/>}/>
