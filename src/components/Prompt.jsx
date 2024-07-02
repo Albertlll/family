@@ -102,7 +102,7 @@ function Prompt(props) {
         
 
 
-        httpClient.post("/api/v1/storys",
+        httpClient.post("/api/v1/storys/fake",
         {
 
             'base_prompt': story
